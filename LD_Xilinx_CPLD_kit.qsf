@@ -1,0 +1,150 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+# Date created = 17:15:40  June 12, 2025
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		LD_Xilinx_CPLD_kit_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M08SAE144C8G
+set_global_assignment -name TOP_LEVEL_ENTITY LD_Xilinx_CPLD_kit
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:15:40  JUNE 12, 2025"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_27 -to i_clk
+set_location_assignment PIN_60 -to i_inh[0]
+set_location_assignment PIN_58 -to i_inh[1]
+set_location_assignment PIN_59 -to i_inh[2]
+set_location_assignment PIN_56 -to i_inh[4]
+set_location_assignment PIN_46 -to i_sig
+set_location_assignment PIN_38 -to o_out[0]
+set_location_assignment PIN_33 -to o_out[1]
+set_location_assignment PIN_39 -to o_out[2]
+set_location_assignment PIN_32 -to o_out[3]
+set_location_assignment PIN_57 -to i_inh[3]
+set_location_assignment PIN_47 -to i_pw_set[3]
+set_location_assignment PIN_50 -to i_pw_set[2]
+set_location_assignment PIN_55 -to i_pw_set[1]
+set_location_assignment PIN_52 -to i_pw_set[0]
+set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
+set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_dip[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_dip[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_inh[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_inh[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_inh[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_inh[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_inh[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_inh[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_inh[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_inh[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_pw_set[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_pw_set[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_pw_set[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_pw_set[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_rst
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i_sig
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_cam_trg
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_led2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_onbd_led[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_onbd_led[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_onbd_led[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_onbd_led[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_out[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_out[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_out[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to o_out[0]
+set_location_assignment PIN_120 -to i_dip[0]
+set_location_assignment PIN_124 -to i_dip[1]
+set_location_assignment PIN_45 -to i_inh[7]
+set_location_assignment PIN_43 -to i_inh[6]
+set_location_assignment PIN_44 -to i_inh[5]
+set_location_assignment PIN_29 -to o_cam_trg
+set_location_assignment PIN_41 -to o_led2
+set_location_assignment PIN_140 -to o_onbd_led[3]
+set_location_assignment PIN_135 -to o_onbd_led[2]
+set_location_assignment PIN_134 -to o_onbd_led[1]
+set_location_assignment PIN_132 -to o_onbd_led[0]
+set_global_assignment -name ENABLE_SIGNALTAP OFF
+set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_global_assignment -name SDC_FILE LD_Xilinx_CPLD_kit.sdc
+set_global_assignment -name VERILOG_FILE LD_Xilinx_CPLD_kit.v
+set_global_assignment -name VERILOG_FILE edge_detect.v
+set_global_assignment -name QIP_FILE PLL.qip
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_location_assignment PIN_74 -to c_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_frq
+set_location_assignment PIN_75 -to c_frq
+set_location_assignment PIN_76 -to c_ldtrg
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_ldtrg
+set_location_assignment PIN_77 -to c_vco
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_vco
+set_location_assignment PIN_121 -to i_rst
+set_location_assignment PIN_79 -to c_led2
+set_location_assignment PIN_81 -to c_pul_stat
+set_location_assignment PIN_84 -to c_cam_trg
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_cam_trg
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_led2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_pul_stat
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[7]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[6]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[5]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[4]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[3]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[2]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[1]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[0]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_pw_set[3]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_pw_set[2]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_pw_set[1]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_pw_set[0]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_pw_set
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_dip[1]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_dip[0]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_dip
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_rst
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_sig
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
