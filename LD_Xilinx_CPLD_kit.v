@@ -30,7 +30,10 @@ reg frq_out;
 reg vco_up;
 reg ld_trg;
 reg cam_trg;
-reg cw_pls; //パルス幅が0もしくは設定以上でpulseは連続出力
+reg cw_pls; //パルス幅設定が0でpulseは連続出力
+reg stop_pls; //パルス幅設定以上でpulse出力停止
+
+
 //wire 
 wire vco_up_ex;
 wire vco_up_in;
@@ -98,27 +101,41 @@ always @(posedge lo_clk)
 //Pw設定用SWの入力値計算
 always @(posedge lo_clk)
 begin
-    case (i_dip[0]) 
-        1'b0: // 5ms 分解能
-            pw_cnt <= 50000 * i_pw_set; // 5ms単位
-        1'b1: // 10ms 分解能
-            pw_cnt <= 100000 * i_pw_set; // 10ms単位
-    endcase
-    
-    if(pw_cnt == 0 || pw_cnt > 1000000)begin
-        cw_pls <= 1;
-    end else begin
-        cw_pls <= 0;
+    if(~pulse_state)begin //パルス出力中は設定を変更しない
+        case (i_dip[0]) 
+            1'b0: // 5ms 分解能
+                pw_cnt <= 50000 * i_pw_set; // 5ms単位
+            1'b1: // 10ms 分解能
+                pw_cnt <= 100000 * i_pw_set; // 10ms単位
+        endcase
+        
+        if(pw_cnt == 0)begin // pwcntの設定が0の時はCW出力
+            cw_pls <= 1;
+        end else begin
+            cw_pls <= 0;
+        end
+
+        if(i_inh[5] == 1 && i_dip[0] == 1 && i_pw_set >= 10) begin //fr 10 Hz Pw 10msec 設定 A以上で停止
+            stop_pls <= 1;
+        end else if(i_inh[5] == 0 && i_dip[0] == 1 && i_pw_set >= 5) begin //fr 20 Hz Pw 10msec 設定 5以上で停止
+            stop_pls <= 1;
+        end else if(i_inh[5] == 0 && i_dip[0] == 0 && i_pw_set >= 10) begin //fr 20 Hz Pw 5msec 設定 A以で停止
+            stop_pls <= 1;    
+        end else begin
+            stop_pls <= 0;
+        end
     end
 end
 
 //edge_detect 検出後カウンタ値を用いて　所定の時間出力するmodule
 always @(posedge lo_clk)
-     begin if (~i_rst)begin
+     begin if (~i_rst || stop_pls)begin
             cnt <= 0;
             pulse_state <= 0; 
             pulse_end <= 2'b00;
             cam_trg <= 0;
+            o_led2 <= 0;//led2 off
+            ld_trg <= 0;//delay triga off
 
         end else if (vco_up &&!pulse_state) begin
             // パルス開始を検出
