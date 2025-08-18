@@ -128,7 +128,7 @@ set_location_assignment PIN_84 -to c_cam_trg
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_cam_trg
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_led2
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to c_pul_stat
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[7]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to i_inh[7]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[6]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[5]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[4]
@@ -136,7 +136,6 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[3]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[2]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[1]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh[0]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_inh
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_pw_set[3]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_pw_set[2]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to i_pw_set[1]
