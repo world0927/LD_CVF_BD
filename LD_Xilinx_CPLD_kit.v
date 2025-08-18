@@ -115,11 +115,11 @@ begin
             cw_pls <= 0;
         end
 
-        if(i_inh[5] == 1 && i_dip[0] == 1 && i_pw_set >= 16h'a) begin //fr 10 Hz Pw 10msec 設定 A以上で停止
+        if(i_inh[5] == 1 && i_dip[0] == 1 && i_pw_set >= 10) begin //fr 10 Hz Pw 10msec 設定 A以上で停止
             stop_pls <= 1;
-        end else if(i_inh[5] == 0 && i_dip[0] == 1 && i_pw_set >= 16h'5) begin //fr 20 Hz Pw 10msec 設定 5以上で停止
+        end else if(i_inh[5] == 0 && i_dip[0] == 1 && i_pw_set >= 5) begin //fr 20 Hz Pw 10msec 設定 5以上で停止
             stop_pls <= 1;
-        end else if(i_inh[5] == 0 && i_dip[0] == 0 && i_pw_set >= 16h'a) begin //fr 20 Hz Pw 5msec 設定 A以で停止
+        end else if(i_inh[5] == 0 && i_dip[0] == 0 && i_pw_set >= 10) begin //fr 20 Hz Pw 5msec 設定 A以で停止
             stop_pls <= 1;    
         end else begin
             stop_pls <= 0;
